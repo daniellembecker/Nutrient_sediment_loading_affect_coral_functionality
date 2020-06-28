@@ -1,0 +1,10 @@
+﻿fragment.ID,treatment,surf.area.cm2,volume
+PA0,low,81.75,590
+PA2,low,51.95,590
+PA3,low,36.37,600
+PA8,low,43.26,605
+PA10,high,55.21,610
+PA13,high,55.7,600
+PA14,high,41.83,610
+PA17,high,73.9,600
+BLANK1,BLANK,,650

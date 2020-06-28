@@ -1,6 +1,6 @@
 #Code for environmental characteristics by site
 #Created By: Danielle Becker
-#Created On: 06/23/2020
+#Created On: 06/28/2020
 #clear list 
 
 rm(list=ls())
@@ -16,17 +16,11 @@ library(tidyverse)
 library(here)
 
 #wd
-now()
+here()
 
 
 #load data sheets
-N.dat <- read_csv("Summer_2019/site.characteristics/Data/macroalgal_N.csv")
-watercol.dat <- read_csv("Summer_2019/site.characteristics/Data/watercol.nutrients.csv")
-temp.dat <- read_csv("Summer_2019/site.characteristics/Data/temp.dat.csv", col_types = cols(site.letter = col_character()))
-light.dat <- read_csv("Summer_2019/site.characteristics/Data/light.dat.csv")
-benthic.cover <- read_csv("Summer_2019/site.characteristics/Data/benthic.survey1.csv")
-meta.dat <- read_csv("Summer_2019/site.characteristics/Data/metadata.csv")
-
+site.dat <- read_csv("Site_Characteristics/Data/site.characteristics.data.csv")
 
 #making three plots for site characteristics, one of percent cover data (biological), one for physical (temp/light), one for environemntal (nutrients) ()
 ###BIOLOGICAL###
@@ -118,7 +112,7 @@ c <- ggplot(light.dat, aes(x = site.letter, y = PFD, fill = site.letter)) +
   theme(axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=16),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
 ggsave(filename = "Summer_2019/site.characteristics/Output/light.plot.png", device = "png", width = 12, height = 12)
-  
+
 ###CHEMICAL###
 #make plot with nutrient levels per site
 
@@ -137,7 +131,7 @@ summary.dat <- long.watercol%>% group_by(site.letter, nutrients, site)%>%
 #filter to remove DIN:DIP to place on other plot
 watercol.all <- summary.dat%>%
   filter(!(nutrients == "DIN:DIP"))
-  
+
 #filter to just have DIN:DIP to place on other plot
 DIN.DIP.watercol <- summary.dat%>%
   filter(nutrients == "DIN:DIP")
@@ -183,7 +177,13 @@ figure
 
 ggsave(filename = "Summer_2019/site.characteristics/Output/site.char.png", device = "png", width = 15, height = 13)
 
+#temp data across sites summarised 
+data.temp<-N.dat %>%
+  group_by(site) %>% #tells to group by treatment
+  summarise(mean=mean(N), se=sd(N)/sqrt(n())) #calculates mean and se
+data.temp
 
+dat <- left_join(data.temp, meta.dat)
 ###############################################################################################################
 #source script for moorea map to combine with other plot later
 source("Summer_2019/manuscript.figures/Scripts/MooreaMap.R")

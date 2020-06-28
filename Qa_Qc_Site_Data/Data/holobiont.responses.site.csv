@@ -1,0 +1,55 @@
+name,site.letter,site.block,paramater.measured,mean,se (±)
+Creepy Tree,A,3,bTc.GP,0.9666242,0.05645591
+Public Beach,B,3,bTc.GP,1.1232783,0.03113844
+Hilton High,C,2,bTc.GP,1.009583,0.05387558
+Sargassum Heaven,D,2,bTc.GP,0.8245532,0.04478819
+Manava,E,1,bTc.GP,0.7716712,0.04859646
+Anemone Heaven,F,1,bTc.GP,0.9584076,0.05306243
+Creepy Tree,A,3,bTc.NC,0.5357194,0.16445992
+Public Beach,B,3,bTc.NC,0.9685743,0.30945738
+Hilton High,C,2,bTc.NC,0.5006895,0.07420404
+Sargassum Heaven,D,2,bTc.NC,0.2909044,0.04587912
+Manava,E,1,bTc.NC,0.302626,0.05572836
+Anemone Heaven,F,1,bTc.NC,0.4045867,0.1562246
+Creepy Tree,A,3,bTc.RD,0.3326684,0.02435342
+Public Beach,B,3,bTc.RD,0.4408881,0.02222459
+Hilton High,C,2,bTc.RD,0.4276792,0.04094437
+Sargassum Heaven,D,2,bTc.RD,0.4239136,0.01374029
+Manava,E,1,bTc.RD,0.3552441,0.01873228
+Anemone Heaven,F,1,bTc.RD,0.4580582,0.03020758
+Creepy Tree,A,3,Topt.GP,29.93267,0.1207199
+Public Beach,B,3,Topt.GP,29.96817,0.232065
+Hilton High,C,2,Topt.GP,29.61976,0.2213879
+Sargassum Heaven,D,2,Topt.GP,30.65711,0.2171421
+Manava,E,1,Topt.GP,30.95372,0.5269019
+Anemone Heaven,F,1,Topt.GP,31.23542,0.5737065
+Creepy Tree,A,3,Topt.NC,29.84195,0.6474778
+Public Beach,B,3,Topt.NC,28.54539,0.7580753
+Hilton High,C,2,Topt.NC,29.5342,0.7133663
+Sargassum Heaven,D,2,Topt.NC,30.24133,0.9929539
+Manava,E,1,Topt.NC,29.69811,0.5221318
+Anemone Heaven,F,1,Topt.NC,30.66879,1.1856653
+Creepy Tree,A,3,Topt.RD,35.39784,0.4072381
+Public Beach,B,3,Topt.RD,34.50275,0.2711729
+Hilton High,C,2,Topt.RD,33.25023,0.2190953
+Sargassum Heaven,D,2,Topt.RD,32.92939,0.3357992
+Manava,E,1,Topt.RD,35.83775,0.7053427
+Anemone Heaven,F,1,Topt.RD,36.12457,0.8124858
+Creepy Tree,A,3,umax.GP,1.0031356,0.056088452
+Public Beach,B,3,umax.GP,1.1776827,0.021757263
+Hilton High,C,2,umax.GP,1.0309521,0.049881533
+Sargassum Heaven,D,2,umax.GP,0.8862435,0.042863091
+Manava,E,1,umax.GP,0.814126,0.037067551
+Anemone Heaven,F,1,umax.GP,1.0451655,0.043883077
+Creepy Tree,A,3,umax.NC,0.3437708,0.029316461
+Public Beach,B,3,umax.NC,0.3529352,0.027164388
+Hilton High,C,2,umax.NC,0.3232312,0.028242665
+Sargassum Heaven,D,2,umax.NC,0.2499682,0.023453428
+Manava,E,1,umax.NC,0.2339824,0.010067318
+Anemone Heaven,F,1,umax.NC,0.2213169,0.009633966
+Creepy Tree,A,3,umax.RD,0.4288674,0.026458735
+Public Beach,B,3,umax.RD,0.5365337,0.020234719
+Hilton High,C,2,umax.RD,0.4830143,0.035484358
+Sargassum Heaven,D,2,umax.RD,0.4815419,0.013749404
+Manava,E,1,umax.RD,0.4828901,0.018836514
+Anemone Heaven,F,1,umax.RD,0.6008253,0.040140185

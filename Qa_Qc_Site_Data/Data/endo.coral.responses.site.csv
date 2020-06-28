@@ -1,0 +1,37 @@
+name,site.letter,site.block,paramater.measured,mean,se (±)
+Creepy Tree,A,3,endosymbiont.densities,1.0971105,0.09353631
+Public Beach,B,3,endosymbiont.densities,0.7481687,0.072223
+Hilton High,C,2,endosymbiont.densities,1.7321975,0.15665489
+Sargassum Heaven,D,2,endosymbiont.densities,1.0894858,0.100046
+Manava,E,1,endosymbiont.densities,0.9409964,0.07667828
+Anemone Heaven,F,1,endosymbiont.densities,0.8204578,0.05694047
+Creepy Tree,A,3,chlorophyll.a.content,5.899123,0.4588214
+Public Beach,B,3,chlorophyll.a.content,5.026802,0.6243187
+Hilton High,C,2,chlorophyll.a.content,10.349447,0.9290407
+Sargassum Heaven,D,2,chlorophyll.a.content,5.422462,0.7196517
+Manava,E,1,chlorophyll.a.content,5.919038,0.4488886
+Anemone Heaven,F,1,chlorophyll.a.content,5.902539,0.6247798
+Creepy Tree,A,3,endosymbiont.pg.N.cell,5.11,0.5418282
+Public Beach,B,3,endosymbiont.pg.N.cell,5.862222,0.6782796
+Hilton High,C,2,endosymbiont.pg.N.cell,4.062222,0.6796114
+Sargassum Heaven,D,2,endosymbiont.pg.N.cell,5.915556,1.0393696
+Manava,E,1,endosymbiont.pg.N.cell,4.155556,1.1224986
+Anemone Heaven,F,1,endosymbiont.pg.N.cell,5.252222,0.8558147
+Creepy Tree,A,3,percent.N.endosymbiont,15.23222,0.7033586
+Public Beach,B,3,percent.N.endosymbiont,17.34,1.3462334
+Hilton High,C,2,percent.N.endosymbiont,17.43222,2.8162148
+Sargassum Heaven,D,2,percent.N.endosymbiont,17.41778,1.9022821
+Manava,E,1,percent.N.endosymbiont,14.38,2.768097
+Anemone Heaven,F,1,percent.N.endosymbiont,17.18556,1.7180028
+Creepy Tree,A,3,percent.N.coral,22.85,1.119019
+Public Beach,B,3,percent.N.coral,17.95778,1.018112
+Hilton High,C,2,percent.N.coral,20.65333,1.440357
+Sargassum Heaven,D,2,percent.N.coral,24.34889,2.431576
+Manava,E,1,percent.N.coral,19.43889,1.381588
+Anemone Heaven,F,1,percent.N.coral,24.59222,1.911168
+Creepy Tree,A,3,coral.tissue.biomass,10.513722,0.704839
+Public Beach,B,3,coral.tissue.biomass,7.696,0.7297947
+Hilton High,C,2,coral.tissue.biomass,10.089389,1.15358
+Sargassum Heaven,D,2,coral.tissue.biomass,9.393,0.9588872
+Manava,E,1,coral.tissue.biomass,6.7455,0.3257494
+Anemone Heaven,F,1,coral.tissue.biomass,8.132433,0.6356061

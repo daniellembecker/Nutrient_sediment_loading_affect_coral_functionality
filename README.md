@@ -17,7 +17,7 @@ This repository includes data and analysis for the above manuscript
 **[Correlation_Matrix](Nutrient_sediment_loading_affect_coral_functionality/Correlation_Matrix/)**    
 Contains data, output, and script files to compose an environmental parameters correlation matrix to compare environmental trends across our varying nutrient and sedimentation gradient within north shore fringing reef sites in Mo'orea, French Polynesia.
 
-**[Effect_Sizes](Nutrient_sediment_loading_affect_coral_functionality/Effect_Sizes/)**          
+**[Effect_Sizes](Nutrient_sediment_loading_affect_coral_functionality/tree/master/Effect_Sizes/)**          
 Contains data, output, and script files to calculate and analyze the effect of the increasing nutrient and sediment gradient residuals on each coral, endosymbiont, and holobiont metabolic response variable
 
 **[Map](Nutrient_sediment_loading_affect_coral_functionality/Map/)**  

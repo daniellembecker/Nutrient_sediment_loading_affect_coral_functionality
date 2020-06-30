@@ -24,7 +24,7 @@ library(here)
 here()
 
 #read in covariate data sheet
-covariate.data <- read.csv("Summer_2019/parameter.connections/Data/covariate.data.csv")
+covariate.data <- read.csv("Effect_Sizes/Data/covariate.data.csv")
 
 #standardize data to z scores for comparisons
 covariate.data$Topt_scale <- scale(covariate.data$Topt, center = TRUE, scale = TRUE)
@@ -150,7 +150,7 @@ ggplot(extrin.dat, aes(x = Estimate, y = combined, col = rate.type, alpha = sig)
   xlab("Standardized Effect Sizes") + #rename x label
   ylab("")  #remove y label
 
-ggsave(filename = "Summer_2019/parameter.connections/Output/extrin.effect.sizes.png", device = "png", width = 6, height = 5)
+ggsave(filename = "Effect_Sizes/Output/holobiont.effect.sizes.png", device = "png", width = 6, height = 5)
 
 
 ##############3#make data sheet that pulls out the confidence intervals and effect sizes######## 
@@ -218,7 +218,7 @@ ggplot(intrin.dat, aes(x = Estimate, y = Variable, alpha = sig)) + #set aestetic
   ylab("")  #remove y label
   
 
-ggsave(filename = "Summer_2019/parameter.connections/Output/intrin.effect.sizes.png", device = "png", width = 5, height = 5)
+ggsave(filename = "Effect_Sizes/Output/endo.coral.effect.sizes.png", device = "png", width = 5, height = 5)
 
 ######################################################################################
 #running lmer models to compare influence of nutrient gradient on all params
@@ -279,7 +279,6 @@ tab_model(chloro)
 
 AFDW <- lmer(AFDW.mg.cm2.~N.resid + (1|site), data = covariate.data)
 anova(AFDW)
-R2_nakagawa(AFDW)
 tab_model(AFDW)
 
 N.AT <- lmer(per.N.AT~N.resid + (1|site), data = covariate.data)
@@ -426,7 +425,7 @@ ggplot(extrin.dat, aes(x = Estimate, y = combined, col = rate.type, alpha = sig)
   ylab("")  #remove y label
 
 
-ggsave(filename = "Summer_2019/parameter.connections/Output/extrin.effect.sizes.trap.png", device = "png", width = 6, height = 5)
+ggsave(filename = "Effect_Sizes/Output/holobiont.effect.sizes.trap.png", device = "png", width = 6, height = 5)
 
 
 ##############3#make data sheet that pulls out the confidence intervals and effect sizes######## 
@@ -494,7 +493,7 @@ ggplot(intrin.dat, aes(x = Estimate, y = Variable, alpha = sig)) + #set aestetic
   ylab("")  #remove y label
 
 
-ggsave(filename = "Summer_2019/parameter.connections/Output/intrin.effect.sizes.trap.png", device = "png", width = 5, height = 5)
+ggsave(filename = "Effect_Sizes/Output/endo.coral.effect.sizes.trap.png", device = "png", width = 5, height = 5)
 
 ######################################################################################
 #running lmer models to compare influence of sedimentation gradient on all params

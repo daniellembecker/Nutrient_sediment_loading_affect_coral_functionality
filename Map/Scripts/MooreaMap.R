@@ -1,7 +1,7 @@
 ###############################################################################################
 ##Making map of moorea with imagies and sites and cowplot of PI curves
 ##created by Danielle Becker 11/14/19
-##edited by Danielle Becker 06/16/20
+##edited by Danielle Becker 06/29/20
 
 
 ##Install packages
@@ -26,7 +26,7 @@ library(here)
 now()
 
 #load data frame for nutrient and sedimentation data
-mydata <- read_csv("Summer_2019/manuscript.figures/Data/map.data.csv")
+mydata <- read_csv("Map/Data/map.data.csv")
 
 #bounding box lowerleftlon, lowerleftlat, upperrightlon, upperrightlat
 myLocation <- c(-149.9501,-17.60,-149.7399,-17.45)
@@ -62,7 +62,7 @@ dev.off
 
 
 
-ggsave(filename = "Summer_2019/manuscript.figures/Output/Moorea.map.png", device = "png", width = 10, height = 8)
+ggsave(filename = "Map/Output/Moorea.map.png", device = "png", width = 10, height = 8)
 
 
 

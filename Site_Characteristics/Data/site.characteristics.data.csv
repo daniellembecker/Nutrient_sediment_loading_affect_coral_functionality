@@ -1,79 +1,79 @@
-name,site.letter,site.block,paramater.measured,mean,se (±)
-Anemone Heaven,F,1,light ,1674.241,59.68912
-Hilton High,C,2,light ,1193.23,41.97451
-Public Beach,B,3,light ,2647.89,71.31371
-Manava,E,1,light ,1533.245,53.7895
-Sargassum Heaven,D,2,light ,2114.013,66.24055
-Creepy Tree,A,3,light ,2677.125,71.60245
-Anemone Heaven,F,1,temp,27.4,0.02952951
-Hilton High,C,2,temp,26.5,0.03479363
-Public Beach,B,3,temp,26.7,0.01617859
-Manava,E,1,temp,27.7,0.0180642
-Sargassum Heaven,D,2,temp,26.9,0.02389325
-Creepy Tree,A,3,temp,27,0.01537962
-Anemone Heaven,F,1,NH4,0.825,0.125
-Hilton High,C,2,NH4,0.36,0.03
-Public Beach,B,3,NH4,0.085,0.045
-Manava,E,1,NH4,1.49,0.049
-Sargassum Heaven,D,2,NH4,0.515,0.045
-Creepy Tree,A,3,NH4,0.225,0.005
-Anemone Heaven,F,1,N.N,0.51,0.02
-Hilton High,C,2,N.N,0.26,0
-Public Beach,B,3,N.N,0.255,0.005
-Manava,E,1,N.N,0.76,0.28
-Sargassum Heaven,D,2,N.N,0.515,0.015
-Creepy Tree,A,3,N.N,0.355,0.005
-Anemone Heaven,F,1,P,0.34,0.01
-Hilton High,C,2,P,0.335,0.015
-Public Beach,B,3,P,0.335,0.015
-Manava,E,1,P,0.355,0.045
-Sargassum Heaven,D,2,P,0.325,0.015
-Creepy Tree,A,3,P,0.4,0.01
-Anemone Heaven,F,1,DIN:DIP,3.938961,0.42467533
-Hilton High,C,2,DIN:DIP,1.858482,0.17276786
-Public Beach,B,3,DIN:DIP,1.011607,0.07410714
-Manava,E,1,DIN:DIP,6.365323,0.21532258
-Sargassum Heaven,D,2,DIN:DIP,3.184535,0.33159393
-Creepy Tree,A,3,DIN:DIP,1.451532,0.06128831
-Anemone Heaven,F,1,N,0.7840256,0.05724245
-Hilton High,C,2,N,0.7906739,0.04636414
-Public Beach,B,3,N,0.6703865,0.01863068
-Manava,E,1,N,0.8935947,0.04482981
-Sargassum Heaven,D,2,N,0.858445,0.03481949
-Creepy Tree,A,3,N,0.747416,0.02602846
-Anemone Heaven,F,1,trap.accumulation.rate,2.287115477,0.21394602
-Hilton High,C,2,trap.accumulation.rate,2.373570014,0.2268049
-Public Beach,B,3,trap.accumulation.rate,1.579760175,0.19094712
-Manava,E,1,trap.accumulation.rate,3.438532719,0.23777433
-Sargassum Heaven,D,2,trap.accumulation.rate,2.149574168,0.07976525
-Creepy Tree,A,3,trap.accumulation.rate,2.008103108,0.14824073
-Anemone Heaven,F,1,coral.cover,16.95,NA
-Hilton High,C,2,coral.cover,35.75,NA
-Public Beach,B,3,coral.cover,33.75,NA
-Manava,E,1,coral.cover,20.05,NA
-Sargassum Heaven,D,2,coral.cover,28,NA
-Creepy Tree,A,3,coral.cover,21.75,NA
-Anemone Heaven,F,1,p.acuta.cover,6.3,NA
-Hilton High,C,2,p.acuta.cover,6.5,NA
-Public Beach,B,3,p.acuta.cover,16,NA
-Manava,E,1,p.acuta.cover,3.5,NA
-Sargassum Heaven,D,2,p.acuta.cover,0.25,NA
-Creepy Tree,A,3,p.acuta.cover,3,NA
-Anemone Heaven,F,1,CCA.cover,6.1,NA
-Hilton High,C,2,CCA.cover,10.25,NA
-Public Beach,B,3,CCA.cover,7.5,NA
-Manava,E,1,CCA.cover,4,NA
-Sargassum Heaven,D,2,CCA.cover,1.25,NA
-Creepy Tree,A,3,CCA.cover,15.25,NA
-Anemone Heaven,F,1,algal.cover,37.15,NA
-Hilton High,C,2,algal.cover,32.625,NA
-Public Beach,B,3,algal.cover,20,NA
-Manava,E,1,algal.cover,22.375,NA
-Sargassum Heaven,D,2,algal.cover,14.5,NA
-Creepy Tree,A,3,algal.cover,14.5,NA
-Anemone Heaven,F,1,substrate.cover,33.5,NA
-Hilton High,C,2,substrate.cover,14.875,NA
-Public Beach,B,3,substrate.cover,22.75,NA
-Manava,E,1,substrate.cover,50.075,NA
-Sargassum Heaven,D,2,substrate.cover,56,NA
-Creepy Tree,A,3,substrate.cover,45.5,NA
+ï»¿name,site.letter,site.block,parameter.measured,mean,se,type.param
+Anemone Heaven,F,1,light ,1674.241,59.68912,physical
+Hilton High,C,2,light ,1193.23,41.97451,physical
+Public Beach,B,3,light ,2647.89,71.31371,physical
+Manava,E,1,light ,1533.245,53.7895,physical
+Sargassum Heaven,D,2,light ,2114.013,66.24055,physical
+Creepy Tree,A,3,light ,2677.125,71.60245,physical
+Anemone Heaven,F,1,temp,27.4,0.02952951,physical
+Hilton High,C,2,temp,26.5,0.03479363,physical
+Public Beach,B,3,temp,26.7,0.01617859,physical
+Manava,E,1,temp,27.7,0.0180642,physical
+Sargassum Heaven,D,2,temp,26.9,0.02389325,physical
+Creepy Tree,A,3,temp,27,0.01537962,physical
+Anemone Heaven,F,1,NH4,0.825,0.125,chemical
+Hilton High,C,2,NH4,0.36,0.03,chemical
+Public Beach,B,3,NH4,0.085,0.045,chemical
+Manava,E,1,NH4,1.49,0.049,chemical
+Sargassum Heaven,D,2,NH4,0.515,0.045,chemical
+Creepy Tree,A,3,NH4,0.225,0.005,chemical
+Anemone Heaven,F,1,N.N,0.51,0.02,chemical
+Hilton High,C,2,N.N,0.26,0,chemical
+Public Beach,B,3,N.N,0.255,0.005,chemical
+Manava,E,1,N.N,0.76,0.28,chemical
+Sargassum Heaven,D,2,N.N,0.515,0.015,chemical
+Creepy Tree,A,3,N.N,0.355,0.005,chemical
+Anemone Heaven,F,1,P,0.34,0.01,chemical
+Hilton High,C,2,P,0.335,0.015,chemical
+Public Beach,B,3,P,0.335,0.015,chemical
+Manava,E,1,P,0.355,0.045,chemical
+Sargassum Heaven,D,2,P,0.325,0.015,chemical
+Creepy Tree,A,3,P,0.4,0.01,chemical
+Anemone Heaven,F,1,DIN:DIP,3.938961,0.42467533,ratio
+Hilton High,C,2,DIN:DIP,1.858482,0.17276786,ratio
+Public Beach,B,3,DIN:DIP,1.011607,0.07410714,ratio
+Manava,E,1,DIN:DIP,6.365323,0.21532258,ratio
+Sargassum Heaven,D,2,DIN:DIP,3.184535,0.33159393,ratio
+Creepy Tree,A,3,DIN:DIP,1.451532,0.06128831,ratio
+Anemone Heaven,F,1,N,0.7840256,0.05724245,gradient
+Hilton High,C,2,N,0.7906739,0.04636414,gradient
+Public Beach,B,3,N,0.6703865,0.01863068,gradient
+Manava,E,1,N,0.8935947,0.04482981,gradient
+Sargassum Heaven,D,2,N,0.858445,0.03481949,gradient
+Creepy Tree,A,3,N,0.747416,0.02602846,gradient
+Anemone Heaven,F,1,trap.accumulation.rate,2.287115477,0.21394602,gradient
+Hilton High,C,2,trap.accumulation.rate,2.373570014,0.2268049,gradient
+Public Beach,B,3,trap.accumulation.rate,1.579760175,0.19094712,gradient
+Manava,E,1,trap.accumulation.rate,3.438532719,0.23777433,gradient
+Sargassum Heaven,D,2,trap.accumulation.rate,2.149574168,0.07976525,gradient
+Creepy Tree,A,3,trap.accumulation.rate,2.008103108,0.14824073,gradient
+Anemone Heaven,F,1,CCA.cover,6.1,NA,biological
+Hilton High,C,2,CCA.cover,10.25,NA,biological
+Public Beach,B,3,CCA.cover,7.5,NA,biological
+Manava,E,1,CCA.cover,4,NA,biological
+Sargassum Heaven,D,2,CCA.cover,1.25,NA,biological
+Creepy Tree,A,3,CCA.cover,15.25,NA,biological
+Anemone Heaven,F,1,algal.cover,37.15,NA,biological
+Hilton High,C,2,algal.cover,32.625,NA,biological
+Public Beach,B,3,algal.cover,20,NA,biological
+Manava,E,1,algal.cover,22.375,NA,biological
+Sargassum Heaven,D,2,algal.cover,14.5,NA,biological
+Creepy Tree,A,3,algal.cover,14.5,NA,biological
+Anemone Heaven,F,1,p.acuta.cover,6.3,NA,biological
+Hilton High,C,2,p.acuta.cover,6.5,NA,biological
+Public Beach,B,3,p.acuta.cover,16,NA,biological
+Manava,E,1,p.acuta.cover,3.5,NA,biological
+Sargassum Heaven,D,2,p.acuta.cover,0.25,NA,biological
+Creepy Tree,A,3,p.acuta.cover,3,NA,biological
+Anemone Heaven,F,1,coral.cover,16.95,NA,biological
+Hilton High,C,2,coral.cover,35.75,NA,biological
+Public Beach,B,3,coral.cover,33.75,NA,biological
+Manava,E,1,coral.cover,20.05,NA,biological
+Sargassum Heaven,D,2,coral.cover,28,NA,biological
+Creepy Tree,A,3,coral.cover,21.75,NA,biological
+Anemone Heaven,F,1,substrate.cover,33.5,NA,biological
+Hilton High,C,2,substrate.cover,14.875,NA,biological
+Public Beach,B,3,substrate.cover,22.75,NA,biological
+Manava,E,1,substrate.cover,50.075,NA,biological
+Sargassum Heaven,D,2,substrate.cover,56,NA,biological
+Creepy Tree,A,3,substrate.cover,45.5,NA,biological

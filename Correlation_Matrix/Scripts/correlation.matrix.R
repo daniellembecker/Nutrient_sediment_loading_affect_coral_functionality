@@ -20,8 +20,8 @@ library(here)
 here()
 
 #load in data files for parameters
-physio.environ.data <- read.csv("Summer_2019/parameter.connections/Data/physio.environ.data.csv")
-correlation.matrix.data <- read.csv("Summer_2019/parameter.connections/Data/TPC.data.csv")
+physio.environ.data <- read.csv("Correlation_Matrix/Data/physio.environ.data.csv")
+correlation.matrix.data <- read.csv("Correlation_Matrix/Data/TPC.data.csv")
 
 #need to filter out PA39 and PA37 fragments as the symbiont counts were not representative of the sample, the sample had been clumpy
 correlation.matrix.data <- correlation.matrix.data%>%
@@ -45,8 +45,6 @@ all.params.data$DIN <- all.params.data$NH4 + all.params.data$N.N
 all.params.data$N.P.ratio <- all.params.data$DIN / all.params.data$P
 
 view(all.params.data)
-
-write.csv(all.params.data, 'Summer_2019/parameter.connections/Data/all.params.data.csv') 
 
 #delete unnecessary columns from the new joined data sheet 
 #could also use select to not hardcode, using a pipe to select specific environ variables
@@ -84,7 +82,7 @@ ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) +
   geom_tile()
 
 #save general correlation matrix
-ggsave(filename = "Summer_2019/parameter.connections/Output/gen.correlation.matrix.png", device = "png", width = 20, height = 10)
+ggsave(filename = "Correlation_Matrix/Output/gen.correlation.matrix.png", device = "png", width = 20, height = 10)
 
 # Get lower and upper triangle of the correlation matrix
 #Note that, a correlation matrix has redundant information. We’ll use the functions below to set half of it to NA
@@ -181,7 +179,7 @@ ggheatmap +
     guides(fill = guide_colorbar(barwidth = 12, barheight = 2, 
                                title.position = "top", title.hjust = 0.5, title.vjust = 1.0))
 
-ggsave(filename = "Summer_2019/parameter.connections/Output/final.correlation.matrix.png", device = "png", width = 10, height = 10)
+ggsave(filename = "Correlation_Matrix/Output/final.correlation.matrix.png", device = "png", width = 10, height = 10)
 
 
 

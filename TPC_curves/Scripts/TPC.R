@@ -25,19 +25,19 @@ here()
 
 #load data
 
-photo.data <- read.csv("Summer_2019/thermtol/Data/Photo.T.csv")
+photo.data <- read.csv("TPC_curves/Data/Photo.T.csv")
 photo.data$X <- NULL
 View(photo.data)
 glimpse(photo.data)
 
 #bring in calcification data sheet and rbind join to Photo.T 
 
-calcification.data <- read.csv("Summer_2019/thermtol/Data/calcification1.csv")
+calcification.data <- read.csv("TPC_curves/Data/calcification1.csv")
 calcification.data$X <- NULL
 mydata <- rbind(photo.data, calcification.data)
 view(mydata)
 
-write.csv(mydata, 'Summer_2019/thermtol/Data/mydata.csv') 
+write.csv(mydata, 'TPC_curves/Data/mydata.csv') 
 
 
 mydata <- mydata %>% #filtering out NP, removes it from the list 
@@ -99,10 +99,6 @@ fits <- mydata %>%
 
 
 
-
-
-
-#make dplyr code and export the slope, intercept and R2 values
 #get r2, extract predit and pull out and join lists, shows o vs predcited and r2
 #PredictedPA1_D <- predict(fits$fit[[1]])
 #ObservedPA1_D <- mydata$umol.cm2.hr[mydata$fragment.ID == "PA1_D"]
@@ -130,7 +126,7 @@ params <- fits %>%
   unnest_legacy(fit %>% map(tidy))
 
 #left join params with meta data file to have recovery block and site block in file
-metadata <- read.csv(file="Summer_2019/thermtol/Data/metadata.csv", header=T) #read in metadata file to add site block and recovery block
+metadata <- read.csv(file="TPC_curves/Data/metadata.csv", header=T) #read in metadata file to add site block and recovery block
 params <- left_join(params, metadata)
 
 # get confidence intervals
@@ -193,7 +189,7 @@ preds2C<- preds2 %>%
   labs(color = "Rate Type")  +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-  ggsave(filename = "Summer_2019/thermtol/Output/calcindiv.curves.png", device = "png", width = 10, height = 10)
+  ggsave(filename = "TPC_curves/Output/calcindiv.curves.png", device = "png", width = 10, height = 10)
   
 #want to do ggplot where we look at individual curves for respiration rates of each fragment
   mydataR <- mydata %>%
@@ -215,7 +211,7 @@ preds2C<- preds2 %>%
     labs(color = "Rate Type")  +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
   
-  ggsave(filename = "Summer_2019/thermtol/Output/respindiv.curves.png", device = "png", width = 10, height = 10)
+  ggsave(filename = "TPC_curves/Output/respindiv.curves.png", device = "png", width = 10, height = 10)
   
 #want to do ggplot where we look at individual curves for photosynthesis rates of each fragment
   mydataGP <- mydata %>%
@@ -237,48 +233,8 @@ preds2C<- preds2 %>%
     labs(color = "Rate Type")  +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
   
-  ggsave(filename = "Summer_2019/thermtol/Output/photoindiv.curves.png", device = "png", width = 10, height = 10)
+  ggsave(filename = "TPC_curves/Output/photoindiv.curves.png", device = "png", width = 10, height = 10)
 
-  #want to do ggplot where we look at one single set of curves
-  mydataindiv <- mydata %>%
-    filter(individual.ID =="PA23")
-  
-  #need to make individual data frames to the join because it isnt pulling from correct data sheet if we dont
-  preds2_C<- preds2 %>%
-    filter(fragment.ID =="PA23_C") 
-  
-  preds2_D<- preds2 %>%
-    filter(fragment.ID =="PA23_D") 
-  
-  preds2_L<- preds2 %>%
-    filter(fragment.ID =="PA23_L")
-  
-  #join data frames together to use for plot
-  
-  preds2indiv <- rbind(preds2_C, preds2_D, preds2_L)
-  
-  #change names of rate type params in data sheet
-  preds2indiv <- preds2indiv %>% 
-    mutate(rate.type = recode_factor(rate.type, `C` = "Calcification", `GP` = "Gross Photosynthesis", `R` = "Respiration"))
-  
-  mydataindiv<- mydataindiv %>% 
-    mutate(rate.type = recode_factor(rate.type, `C` = "Calcification", `GP` = "Gross Photosynthesis", `R` = "Respiration"))
-  
-  ggplot() +
-    geom_point(aes(K - 273.15, log.rate, col = rate.type), size = 2, mydataindiv) +
-    geom_line(aes(K - 273.15, ln.rate, col = rate.type, group = fragment.ID), alpha = 0.5, preds2indiv) +
-    scale_colour_manual(values = c('green4', 'blue', 'black')) +
-    theme_bw(base_size = 12, base_family = 'Helvetica') +
-    labs(x = "Temperature (ºC)", y = expression(bold("Log Rate (" *mu*"mol " *cm^-2 *hr^-1*")"))) +
-    #facet_grid(~ site.block, labeller = labeller(site.block=labels)) + #rename facet wrap headings
-    theme(legend.position = "right") +
-    theme(axis.title.x = element_text(size = 14, color = "black", face = "bold"), axis.text.x=element_text(size = 11, color = "black"), axis.text.y = element_text(size = 11, color = "black"), axis.title.y = element_text(size = 14, color = "black", face = "bold")) +
-    geom_point(size = 3) + #increase the point size 
-    labs(col = "Rate Type") +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black")) 
-  
-  ggsave(filename = "Summer_2019/thermtol/Output/singlecurve.WSN.png", device = "png", width = 6, height = 5)
-  
 #make site.block and recoevry block a factor
   mydata$site.block <- as.factor(mydata$site.block)
   mydata$recovery.block <-as.factor(mydata$recovery.block)
@@ -303,12 +259,8 @@ ggplot() +
   #guides(color = guide_legend(order = 1), pch = guide_legend(order = 2)) + #change order of legends 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black")) 
   
-ggsave(filename = "Summer_2019/thermtol/Output/TPCcurves.png", device = "png", width = 40, height = 20)
+ggsave(filename = "TPC_curves/Output/TPCcurves.png", device = "png", width = 40, height = 20)
 
-#filter out PA2_C becuase outlier in my params data frame
-#params <- params %>%
- # filter(fragment.ID != "PA2_D")
- 
 
 # function for calculating Topt
 
@@ -324,7 +276,7 @@ Topt_data <- params %>%
   left_join(.,metadata)
   #group_by(., rate.type, site, fragment.ID)
 
-write.csv(Topt_data, 'Summer_2019/thermtol/Data/Topt_data.csv') 
+write.csv(Topt_data, 'TPC_curves/Data/Topt_data.csv') 
 
 
 #get temerature back in celcius not K
@@ -350,7 +302,7 @@ ggplot(data.summary, aes(x=site.letter, y=mean, col = rate.type, group=factor(si
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
  
-ggsave(filename = "Summer_2019/thermtol/Output/Topt_graph.png", device = "png", width = 7, height = 5)
+ggsave(filename = "TPC_curves/Output/Topt_graph.png", device = "png", width = 7, height = 5)
 
 
 #data summary for mean and se for lnc per site
@@ -367,7 +319,7 @@ ggplot(data.summary, aes(x=site.letter, y=mean, col = rate.type, group=factor(si
   theme(legend.text.align = 0) + #make legend text align left
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Summer_2019/thermtol/Output/lnc_graph.png", device = "png", width = 8, height = 5)
+ggsave(filename = "TPC_curves/Output/bTc_graph.png", device = "png", width = 8, height = 5)
     
 
 #calculate Pmax values between sites
@@ -376,7 +328,7 @@ Pmax_data <- Topt_data %>%
   mutate(Pmax = schoolfield_high(lnc = lnc, E = E, Th = Th, Eh = Eh, temp = Topt + 273.15, Tc = 26)) %>% #add in factors that make up schoolfield function, reference topt to get pmax
   group_by(., rate.type, site, fragment.ID, site.letter)
 
-write.csv(Pmax_data, 'Summer_2019/thermtol/Data/Pmax_data.csv') # export all the uptake rates
+write.csv(Pmax_data, 'TPC_curves/Data/Pmax_data.csv') # export all the uptake rates
 
 
 #data summary for mean and se for pmax per site
@@ -393,7 +345,7 @@ ggplot(data.summary, aes(x=site.letter, y=mean, col = rate.type, group=factor(si
   theme(legend.text.align = 0) + #make legend text align left
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Summer_2019/thermtol/Output/Pmax_graph.png", device = "png", width = 8, height = 5)
+ggsave(filename = "TPC_curves/Output/Pmax_graph.png", device = "png", width = 8, height = 5)
 
 
 
@@ -413,7 +365,7 @@ TPC.data <- TPC.data %>%
   filter(!(fragment.ID == "PA47"))
   
 
-write.csv(TPC.data, 'Summer_2019/parameter.connections/Data/TPC.data.csv') 
+write.csv(TPC.data, 'Correlation_Matrix/Data/TPC.data.csv') 
 
 
 

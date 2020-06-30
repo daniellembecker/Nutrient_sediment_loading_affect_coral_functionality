@@ -27,14 +27,14 @@ library("LoLinR")
 library("lubridate")
 library("chron")
 library('plyr')
+library(dplyr)
 library('tidyverse')
 
 
 ##### PHOTOSYNTHESIS AND RESPIRATION #####
 
 # get the file path
-setwd("Summer_2019/PI_curve_sites1")
-path.p<-"../PI_curve_sites1/Data/PI_curve_resp" #the location of all your respirometry files 
+path.p<-"PI_curve_sites1/Data/PI_curve_resp" #the location of all your respirometry files 
 
 # bring in the oxygen files
 file.names<-basename(list.files(path = path.p, pattern = "csv$", recursive = TRUE)) #list all csv file names in the folder and subfolders
@@ -48,7 +48,6 @@ colnames(Photo.R) <- c("fragment.ID.full","Intercept", "umol.L.sec","Temp.C","Li
 
 
 #Load Sample Info
-#Sample.Info <- read.csv(file=paste0(path.p,"/../Panama MetaData/Nubbin_Sample_Info_T0_Panama_QC.csv"), header=T) #read sample.info data
 Sample.Info <- read.csv(file=paste0(path.p,"/../resp_data.csv"), header=T) #read sample.info data
 
 # load surface area data
@@ -97,7 +96,7 @@ for(i in 1:length(file.names.full)) { # for every file in list calculate O2 upta
     #Save plot prior to and after data thinning to make sure thinning is not too extreme
     rename <- sub(".csv","", file.names[i]) # remove all the extra stuff in the file name
      
-    pdf(paste0("Output/",rename,"thinning.pdf")) # open the graphics device
+    pdf(paste0("PI_curve_sites1/Output/",rename,"thinning.pdf")) # open the graphics device
     
     par(omi=rep(0.3, 4)) #set size of the outer margins in inches
     par(mfrow=c(1,2)) #set number of rows and columns in multi plot graphic
@@ -143,7 +142,7 @@ for(i in 1:length(file.names.full)) { # for every file in list calculate O2 upta
     
     # rewrite the file everytime... I know this is slow, but it will save the data that is already run
 }
-write.csv(Photo.R, 'Output/Photo.R.csv')  
+write.csv(Photo.R, 'PI_curve_sites1/Output/Photo.R.csv')  
 View(Photo.R)
 
 # Calculate P and R rate
@@ -214,8 +213,9 @@ Photo.R$Rate.ln<-log(Photo.R$umol.cm2.hr+0.1)
 #facet_wrap(~ Species, labeller = labeller(.multi_line = FALSE))
   
 
-write.csv(Photo.R, 'Output/PI_curvesRates.csv') # export all the uptake rates
+write.csv(Photo.R, 'PI_curve_sites1/Output/PI_curvesRates.csv') # export all the uptake rates
 View(Photo.R)
+
 
 PhotoMeans<- Photo.R %>%
   group_by(species, run)%>%
@@ -230,7 +230,7 @@ ggplot()+
   geom_line(data = PhotoMeans,  aes(x=run, y=rates.mean), size=1)+
   geom_errorbar(data = PhotoMeans, aes(x = run, ymin=rates.mean-se, ymax=rates.mean+se, width=.2))
   #facet_wrap(~ Species, labeller = labeller(.multi_line = FALSE))+
-  ggsave('Output/RespirationRates.png')
+  ggsave('PI_curve_sites1/Output/RespirationRates.png')
 
 #Mo'orea PI curve fit
 #pulling out numeric for everything, pull put for high and pull out for low and do a curve 
@@ -296,7 +296,7 @@ plot(PAR,Pc,xlab="",
   abline(v=Ik, col="red", lty=3, lwd = 3)
   text(x = 300, y = 1.0, label = "Ik", srt = 0)
   
-  dev.copy(png,'Output/Moorea_Sum19_PI_Sites1.png', width = 5, height = 4, units = "in", res = 1200)
+  dev.copy(png,'PI_curve_sites1/Output/Moorea_Sum19_PI_Sites1.png', width = 5, height = 4, units = "in", res = 1200)
   dev.off()
   
   
@@ -318,7 +318,7 @@ plot(PAR,Pc,xlab="",
   
   
   
-  pdf("Output/Figures_Values_PICurves.pdf")
+  pdf("PI_curve_sites1/Output/Figures_Values_PICurves.pdf")
   
   getwd()
     
@@ -334,10 +334,10 @@ library(png)
 library(grid)
 library(gridExtra)
 
-plot1 <- readPNG('Output/Moorea_Sum19_PI_Sites1.png')
-plot2 <- readPNG('../PI_curve_sites2/Output/Moorea_Sum19_PI_Sites2.png')
-plot3 <- readPNG('../PI_curve_sites3/Output/Moorea_Sum19_PI_Sites3.png')
-plot4 <- readPNG('../../../../Repositories/Light_Spectrum/Output/blueandmultilight.png')
+plot1 <- readPNG('PI_curve_sites1/Output/Moorea_Sum19_PI_Sites1.png')
+plot2 <- readPNG('PI_curve_sites2/Output/Moorea_Sum19_PI_Sites2.png')
+plot3 <- readPNG('PI_curve_sites3/Output/Moorea_Sum19_PI_Sites3.png')
+plot4 <- readPNG('../../Repositories/Light_Spectrum/Output/blueandmultilight.png')
 
 arrange <- grid.arrange(rasterGrob(plot1), rasterGrob(plot2), rasterGrob(plot3), rasterGrob(plot4), ncol=2, nrow=2)
 

@@ -14,21 +14,19 @@ This repository includes data and analysis for the above manuscript
 
 **Folders:**
 
-**[Correlation_Matrix](Nutrient_sediment_loading_affect_coral_functionality/Correlation_Matrix)**
-
+**[Correlation_Matrix](Nutrient_sediment_loading_affect_coral_functionality/Correlation_Matrix)**    
 Contains data, output, and script files to compose an environmental parameters correlation matrix to compare environmental trends across our varying nutrient and sedimentation gradient within north shore fringing reef sites in Mo'orea, French Polynesia.
 
-**[Effect_Sizes](Nutrient_sediment_loading_affect_coral_functionality/Effect_Sizes)**
-
+**[Effect_Sizes](Nutrient_sediment_loading_affect_coral_functionality/Effect_Sizes)**          
 Contains data, output, and script files to calculate and analyze the effect of the increasing nutrient and sediment gradient residuals on each coral, endosymbiont, and holobiont metabolic response variable
 
-**[Map](Nutrient_sediment_loading_affect_coral_functionality/Map)**
+**[Map](Nutrient_sediment_loading_affect_coral_functionality/Map)**  
 Contains data, output, and script files to create a map of Mo'orea showing detailed information on the nutrient and sediment regime at each of our sampling sites. The data is represented by the average percent nitrogen content in *Turbinaria ornata* (macroalgal species) samples and sedimentation rates at each site. 
 
-**[PI_curve_sites1](Nutrient_sediment_loading_affect_coral_functionality/PI_curves_sites1)**
+**[PI_curve_sites1](Nutrient_sediment_loading_affect_coral_functionality/PI_curves_sites1)**  
 Contains data, output, and script files to characterize a net photosynthesis as a function of photon flux density (commonly referred to as photosynthesis-irradiance (PI)) curve and analyze the saturating light levels for the experimental coral samples collected and sampled from sites E and F (eastern sites). Also, the output file contains a compilation plot of the three PI curves analyzed and the spectral trace of our Mars Aqua 300w LED Brand Epistar light used during experimental trials in Mo'orea.
 
-**[PI_curve_sites2](Nutrient_sediment_loading_affect_coral_functionality/PI_curves_sites2)**
+**[PI_curve_sites2](Nutrient_sediment_loading_affect_coral_functionality/PI_curves_sites2)**  
 Contains data, output, and script files to characterize a net photosynthesis as a function of photon flux density (commonly referred to as photosynthesis-irradiance (PI)) curve and analyze the saturating light levels for the experimental coral samples collected and sampled from sites C and D (central sites). 
 
 **[PI_curve_sites3](Nutrient_sediment_loading_affect_coral_functionality/PI_curves_sites3)**

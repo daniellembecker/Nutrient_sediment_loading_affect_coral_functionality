@@ -189,7 +189,7 @@ preds2C<- preds2 %>%
   labs(color = "Rate Type")  +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-  ggsave(filename = "TPC_curves/Output/calcindiv.curves.png", device = "png", width = 10, height = 10)
+  ggsave(filename = "TPC_curves/Output/calcindiv.curves.pdf", device = "pdf", width = 10, height = 10)
   
 #want to do ggplot where we look at individual curves for respiration rates of each fragment
   mydataR <- mydata %>%
@@ -211,7 +211,7 @@ preds2C<- preds2 %>%
     labs(color = "Rate Type")  +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
   
-  ggsave(filename = "TPC_curves/Output/respindiv.curves.png", device = "png", width = 10, height = 10)
+  ggsave(filename = "TPC_curves/Output/respindiv.curves.pdf", device = "pdf", width = 10, height = 10)
   
 #want to do ggplot where we look at individual curves for photosynthesis rates of each fragment
   mydataGP <- mydata %>%
@@ -233,7 +233,7 @@ preds2C<- preds2 %>%
     labs(color = "Rate Type")  +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black"))
   
-  ggsave(filename = "TPC_curves/Output/photoindiv.curves.png", device = "png", width = 10, height = 10)
+  ggsave(filename = "TPC_curves/Output/photoindiv.curves.pdf", device = "pdf", width = 10, height = 10)
 
 #make site.block and recoevry block a factor
   mydata$site.block <- as.factor(mydata$site.block)
@@ -259,7 +259,7 @@ ggplot() +
   #guides(color = guide_legend(order = 1), pch = guide_legend(order = 2)) + #change order of legends 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black")) 
   
-ggsave(filename = "TPC_curves/Output/TPCcurves.png", device = "png", width = 40, height = 20)
+ggsave(filename = "TPC_curves/Output/TPCcurves.pdf", device = "pdf", width = 40, height = 20)
 
 
 # function for calculating Topt
@@ -302,7 +302,7 @@ ggplot(data.summary, aes(x=site.letter, y=mean, col = rate.type, group=factor(si
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
  
-ggsave(filename = "TPC_curves/Output/Topt_graph.png", device = "png", width = 7, height = 5)
+ggsave(filename = "TPC_curves/Output/Topt_graph.pdf", device = "pdf", width = 7, height = 5)
 
 
 #data summary for mean and se for lnc per site
@@ -319,7 +319,7 @@ ggplot(data.summary, aes(x=site.letter, y=mean, col = rate.type, group=factor(si
   theme(legend.text.align = 0) + #make legend text align left
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "TPC_curves/Output/bTc_graph.png", device = "png", width = 8, height = 5)
+ggsave(filename = "TPC_curves/Output/bTc_graph.pdf", device = "pdf", width = 8, height = 5)
     
 
 #calculate Pmax values between sites
@@ -345,7 +345,7 @@ ggplot(data.summary, aes(x=site.letter, y=mean, col = rate.type, group=factor(si
   theme(legend.text.align = 0) + #make legend text align left
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "TPC_curves/Output/Pmax_graph.png", device = "png", width = 8, height = 5)
+ggsave(filename = "TPC_curves/Output/Pmax_graph.pdf", device = "pdf", width = 8, height = 5)
 
 
 

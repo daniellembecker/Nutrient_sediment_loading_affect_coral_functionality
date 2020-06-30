@@ -55,14 +55,15 @@ map <- ggmap(myMap) +
            location = "bottomleft", st.dist = 0.037, anchor = c( x = bb$ll.lon + 0.016, y = bb$ll.lat +0.014)) #add scale bar
 
 
-north2(map, x=0.20, y=0.36, symbol=3) #add north symbol to map
+north2(map, x=0.20, y=0.41, symbol=3) #add north symbol to map
+
 
 dev.off
 
 
 
 
-ggsave(filename = "Map/Output/Moorea.map.png", device = "png", width = 10, height = 8)
+ggsave(filename = "Map/Output/Moorea.map.pdf", device = "pdf", width = 10, height = 8)
 
 
 

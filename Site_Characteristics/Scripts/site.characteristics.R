@@ -55,7 +55,7 @@ a <- ggplot(bio.dat, aes(fill=parameter.measured, y=mean, x=site.letter)) +
   scale_y_continuous(expand = c(0,0)) +
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Site_Characteristics/Output/biological.plot.png", device = "png", width = 12, height = 12)
+ggsave(filename = "Site_Characteristics/Output/biological.plot.pdf", device = "pdf", width = 12, height = 12)
 
 
 ###PHYSICAL###
@@ -80,7 +80,7 @@ b <- ggplot(temp.dat, aes(x = site.letter, y = Temp, fill = site.letter)) +
   ylim(22,30) +
   theme(axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Site_Characteristics/Output/temp.plot.png", device = "png", width = 12, height = 12)
+ggsave(filename = "Site_Characteristics/Output/temp.plot.pdf", device = "pdf", width = 12, height = 12)
 
 
 #compare  light data across sites summarised 
@@ -99,7 +99,7 @@ c <- ggplot(light.dat, aes(x = site.letter, y = PFD, fill = site.letter)) +
   ylim(0,5000) +
   theme(axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=16),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Site_Characteristics/Output/light.plot.png", device = "png", width = 12, height = 12)
+ggsave(filename = "Site_Characteristics/Output/light.plot.pdf", device = "pdf", width = 12, height = 12)
 
 ###CHEMICAL###
 #make plot with nutrient levels per site
@@ -128,7 +128,7 @@ d <- ggplot(watercol.all, aes(x=site.letter, y = mean, fill = parameter.measured
   theme(legend.text.align = 0) + #make legend text align left
   theme(legend.text=element_text(size=16), axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Site_Characteristics/Output/water.col.plot.png", device = "png", width = 12, height = 12)
+ggsave(filename = "Site_Characteristics/Output/water.col.plot.pdf", device = "pdf", width = 12, height = 12)
 
 e <- ggplot(DIN.DIP.watercol, aes(y=mean, x=site.letter)) + 
   geom_bar(position=position_dodge(), stat="identity", fill = "hotpink3") + #determines the bar width
@@ -139,7 +139,7 @@ e <- ggplot(DIN.DIP.watercol, aes(y=mean, x=site.letter)) +
   scale_y_continuous(expand = c(0,0), limits = c(0,6.8)) +
   theme(axis.text.x=element_text(color="black", size=16), plot.title = element_text(hjust =0.5, color = "black", size=22), axis.text.y=element_text(color="black", size=16), axis.title.x = element_text(color="black", size=18), axis.title.y = element_text(color="black", size=18),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "Site_Characteristics/Output/per.N.plot.png", device = "png", width = 12, height = 12)
+ggsave(filename = "Site_Characteristics/Output/per.N.plot.pdf", device = "pdf", width = 12, height = 12)
 
 ###########################################################################################################
 #make plots for all site condtions
@@ -151,7 +151,7 @@ figure <- a  / (b + c) / (d + e) +      #patchwork to combine plots
 figure
 
 
-ggsave(filename = "Site_Characteristics/Output/site.char.png", device = "png", width = 15, height = 13)
+ggsave(filename = "Site_Characteristics/Output/site.char.pdf", device = "pdf", width = 15, height = 13)
 
 
 ###############################################################################################################
@@ -168,7 +168,7 @@ combined.plots
 
 
 
-ggsave("Site_Characteristics/Output/site.map.png", width = 16, height = 14)
+ggsave("Site_Characteristics/Output/site.map.pdf", width = 16, height = 14)
 
 
 

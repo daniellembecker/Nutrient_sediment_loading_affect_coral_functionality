@@ -82,7 +82,7 @@ ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) +
   geom_tile()
 
 #save general correlation matrix
-ggsave(filename = "Correlation_Matrix/Output/gen.correlation.matrix.png", device = "png", width = 20, height = 10)
+ggsave(filename = "Correlation_Matrix/Output/gen.correlation.matrix.pdf", device = "pdf", width = 20, height = 10)
 
 # Get lower and upper triangle of the correlation matrix
 #Note that, a correlation matrix has redundant information. We’ll use the functions below to set half of it to NA
@@ -179,7 +179,7 @@ ggheatmap +
     guides(fill = guide_colorbar(barwidth = 12, barheight = 2, 
                                title.position = "top", title.hjust = 0.5, title.vjust = 1.0))
 
-ggsave(filename = "Correlation_Matrix/Output/final.correlation.matrix.png", device = "png", width = 10, height = 10)
+ggsave(filename = "Correlation_Matrix/Output/final.correlation.matrix.pdf", device = "pdf", width = 10, height = 10)
 
 
 

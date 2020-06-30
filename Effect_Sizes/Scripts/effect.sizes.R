@@ -150,7 +150,7 @@ ggplot(extrin.dat, aes(x = Estimate, y = combined, col = rate.type, alpha = sig)
   xlab("Standardized Effect Sizes") + #rename x label
   ylab("")  #remove y label
 
-ggsave(filename = "Effect_Sizes/Output/holobiont.effect.sizes.png", device = "png", width = 6, height = 5)
+ggsave(filename = "Effect_Sizes/Output/holobiont.effect.sizes.pdf", device = "pdf", width = 6, height = 5)
 
 
 ##############3#make data sheet that pulls out the confidence intervals and effect sizes######## 
@@ -218,7 +218,7 @@ ggplot(intrin.dat, aes(x = Estimate, y = Variable, alpha = sig)) + #set aestetic
   ylab("")  #remove y label
   
 
-ggsave(filename = "Effect_Sizes/Output/endo.coral.effect.sizes.png", device = "png", width = 5, height = 5)
+ggsave(filename = "Effect_Sizes/Output/endo.coral.effect.sizes.pdf", device = "pdf", width = 5, height = 5)
 
 ######################################################################################
 #running lmer models to compare influence of nutrient gradient on all params
@@ -425,7 +425,7 @@ ggplot(extrin.dat, aes(x = Estimate, y = combined, col = rate.type, alpha = sig)
   ylab("")  #remove y label
 
 
-ggsave(filename = "Effect_Sizes/Output/holobiont.effect.sizes.trap.png", device = "png", width = 6, height = 5)
+ggsave(filename = "Effect_Sizes/Output/holobiont.effect.sizes.trap.pdf", device = "pdf", width = 6, height = 5)
 
 
 ##############3#make data sheet that pulls out the confidence intervals and effect sizes######## 
@@ -493,7 +493,7 @@ ggplot(intrin.dat, aes(x = Estimate, y = Variable, alpha = sig)) + #set aestetic
   ylab("")  #remove y label
 
 
-ggsave(filename = "Effect_Sizes/Output/endo.coral.effect.sizes.trap.png", device = "png", width = 5, height = 5)
+ggsave(filename = "Effect_Sizes/Output/endo.coral.effect.sizes.trap.pdf", device = "pdf", width = 5, height = 5)
 
 ######################################################################################
 #running lmer models to compare influence of sedimentation gradient on all params

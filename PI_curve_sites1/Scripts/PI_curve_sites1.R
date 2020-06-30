@@ -342,7 +342,7 @@ plot4 <- readPNG('../../Repositories/Light_Spectrum/Output/blueandmultilight.png
 arrange <- grid.arrange(rasterGrob(plot1), rasterGrob(plot2), rasterGrob(plot3), rasterGrob(plot4), ncol=2, nrow=2)
 
 
-ggsave("Output/PI_curve_all.png", arrange, width = 8, height = 6)
+ggsave("PI_curve_sites1/Output/PI_curve_all.pdf", device = "pdf", arrange, width = 8, height = 6)
 
 
 

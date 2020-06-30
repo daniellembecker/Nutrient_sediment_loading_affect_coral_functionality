@@ -15,9 +15,9 @@ library(seacarb)
 
 ##Data files (CHANGE ONLY THESE TWO LINES OF CODE)---------------------------------------------------
 #Calibration File
-filename.calib<-"Summer_2019/thermtol/Data/TTLightCalibration.csv" 
+filename.calib<-"TPC_curves/Data/TTLightCalibration.csv" 
 #data file
-filename.data<-"Summer_2019/thermtol/Data/TTLightpHData.csv" 
+filename.data<-"TPC_curves/Data/TTLightpHData.csv" 
 
 #Read in the calibration data-----------------------------------------------------------------------------------
 z<-read.table(filename.calib, header=T, sep=",", na.string="NA") 
@@ -74,7 +74,7 @@ pH<-phTris+(mvTris/1000-mV/1000)/(R*(Data$Tin+273.15)*log(10)/Far)
 
 Data<-cbind(Data,pH)
 
-path<-file.path("Summer_2019/thermtol/Data") #telling it what path to follow 
+path<-file.path("TPC_curves/Data") #telling it what path to follow 
 date<-strsplit(as.character(Sys.time()),split=" ")[[1]]
 write.table(Data,paste0(path,"/CarbChem",date[1],".csv"),sep=",", row.names = FALSE) #use this to take out the first x row 
 #Done!------------------------------------------------------------------------------------------------------------------

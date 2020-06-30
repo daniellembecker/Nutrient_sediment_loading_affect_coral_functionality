@@ -17,7 +17,7 @@ here()
 
 #bring in files 
 
-calc.data <- read.csv("Summer_2019/thermtol/Data/CarbChem2019-08-18.csv")
+calc.data <- read.csv("TPC_curves/Data/CarbChem2020-06-27.csv")
 
 #create new data frame of just the initial data, pulll out initiail data from sample.type
 
@@ -58,7 +58,7 @@ calc.data <- left_join(calc.data, mean.blanks) #bring in mean blanks to calc.dat
 
 #need to join in SA,volume data and time data by fragment ID, before calculating NEC
 
-sample.data <- read.csv("Summer_2019/rates/Data/sample_info_TT.csv") #bring in SA and volume data sheet
+sample.data <- read.csv("Respirometry/Data/sample_info_TT.csv") #bring in SA and volume data sheet
 
 SA <- sample.data[, c("fragment.ID", "surf.area.cm2", "volume")] #pull out the necessary columns and treatment 
 
@@ -74,7 +74,7 @@ SA[,4] = NULL #had to delete the light-dark column to allow to just join by frag
 calc.data2 <- left_join(calc.data, SA)
 
 #bring in the time data from resp.data sheet
-resp.data <- read.csv("Summer_2019/rates/Data/resp_data_TT.csv")
+resp.data <- read.csv("Respirometry/Data/resp_data_TT.csv")
 
 #need to organize and first delete the dark information
 rows.dark <- which(resp.data$light_dark == "dark") #tells you all the rows that you have with blanks
@@ -117,7 +117,7 @@ full.calc.data$individual.ID <- strsplit(full.calc.data$fragment.ID, '_L')
 
 #need to bring in the Temp.C linked to NP for calcification, edit data frame by removing all GP and R data so I can use the NP Temp.C values in my new data frame
 
-adjust.calc.data <- read.csv("Summer_2019/thermtol/Data/Photo.T.csv") #bring in photo.T sheet with Temp.C values
+adjust.calc.data <- read.csv("TPC_curves/Data/Photo.T.csv") #bring in photo.T sheet with Temp.C values
 rows.GP <- which(adjust.calc.data$rate.type == "GP") #tells you all the rows that you have wwith GP
 GP <- adjust.calc.data[-rows.GP,] #to remove the rows with GP data
 
@@ -146,4 +146,4 @@ calcification$umol.cm2.hr[calcification$umol.cm2.hr<0]<-0
 #log x+ 1 you will have to log x + whatever the difference is here, a line for dissolution and calcification
 calcification$umol.cm2.hr <- log(calcification$umol.cm2.hr+1) 
 
-write.csv(calcification, 'Summer_2019/thermtol/Data/calcification.csv') 
+write.csv(calcification, 'TPC_curves/Data/calcification1.csv') 

@@ -14,7 +14,7 @@ This repository includes data and analysis for the above manuscript
 
 **Folders:**
 
-**Correlation_Matrix**\
+**[Correlation_Matrix]**\ (Nutrient_sediment_loading_affect_coral_functionality)
 Contains data, output, and script files to compose an environmental parameters correlation matrix to compare environmental trends across our varying nutrient and sedimentation gradient within north shore fringing reef sites in Mo'orea, French Polynesia.
 
 **Effect_Sizes**\

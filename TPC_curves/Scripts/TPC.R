@@ -24,7 +24,7 @@ here()
 
 
 #load data
-
+metadata <- read.csv(file="TPC_curves/Data/metadata.csv", header=T) #read in metadata file to add site block and recovery block
 photo.data <- read.csv("TPC_curves/Data/Photo.T.csv")
 photo.data$X <- NULL
 View(photo.data)
@@ -35,6 +35,9 @@ glimpse(photo.data)
 calcification.data <- read.csv("TPC_curves/Data/calcification1.csv")
 calcification.data$X <- NULL
 mydata <- rbind(photo.data, calcification.data)
+
+#join mydata with metadata for site letter
+mydata <- left_join(mydata, metadata)
 view(mydata)
 
 write.csv(mydata, 'TPC_curves/Data/mydata.csv') 
@@ -126,7 +129,6 @@ params <- fits %>%
   unnest_legacy(fit %>% map(tidy))
 
 #left join params with meta data file to have recovery block and site block in file
-metadata <- read.csv(file="TPC_curves/Data/metadata.csv", header=T) #read in metadata file to add site block and recovery block
 params <- left_join(params, metadata)
 
 # get confidence intervals
@@ -242,24 +244,25 @@ preds2C<- preds2 %>%
   view(mydata)
     
 #make set labels fro site block params to relabel in facet grid
-labels <- c("1" = "Eastern", "2" = "Central", "3" = "Western")
+labels <- c("A" = "Site A", "B" = "Site B", "C" = "Site C", "D" = "Site D", "E" = "Site E", "F" = "Site F")
 
 # plot all P, R and C values in TPCs
 ggplot() +
   geom_point(aes(K - 273.15, log.rate, col = rate.type), size = 2, mydata) +
   geom_line(aes(K - 273.15, ln.rate, col = rate.type, group = fragment.ID), alpha = 0.5, preds2) +
-  scale_colour_manual(values = c('green4', 'blue', 'black')) +
+  scale_colour_manual(limits=c("GP", "R", "C"), values = c('green4', 'blue', 'black'), labels = c("Gross Photosynthesis", "Dark Respiration", "Net Calcification")) +
   theme_bw(base_size = 12, base_family = 'Helvetica') +
-  ylab(expression("Log " *mu*"mol (" *cm^-2 *hr^-1*")")) +
+  ylab(expression("Log Rate (" *mu*"mol " *cm^-2 *hr^-1*")")) +
   xlab('Temperature (ºC)') +
-  facet_grid(~ site.block, labeller = labeller(site.block=labels)) + #rename facet wrap headings
+  facet_grid(~ site.letter, labeller = labeller(site.letter=labels)) + #rename facet wrap headings) + #rename facet wrap headings
   theme(legend.position = "right") +
   labs(col = "Rate Type") +
-  #labs(pch = "Region") + #rename legend title
-  #guides(color = guide_legend(order = 1), pch = guide_legend(order = 2)) + #change order of legends 
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background = element_blank(), axis.line = element_line(colour = "black")) 
-  
-ggsave(filename = "TPC_curves/Output/TPCcurves.pdf", device = "pdf", width = 40, height = 20)
+  geom_hline(yintercept=0, color = "red") +
+  theme(legend.position="top") +
+  theme(legend.direction = "horizontal") +
+  theme(strip.text.x = element_text(size = 14), legend.text=element_text(size=16), legend.title=element_text(size=18), axis.text.x=element_text(color="black", size=18), axis.text.y=element_text(color="black", size=18), axis.title.x = element_text(color="black", size=20), axis.title.y = element_text(color="black", size=20),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
+
+ggsave(filename = "TPC_curves/Output/TPCcurves.pdf", device = "pdf", width = 15, height = 10)
 
 
 # function for calculating Topt

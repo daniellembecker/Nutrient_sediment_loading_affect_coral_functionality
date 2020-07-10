@@ -254,8 +254,7 @@ ggplot() +
   theme_bw(base_size = 12, base_family = 'Helvetica') +
   ylab(expression("Log Rate (" *mu*"mol " *cm^-2 *hr^-1*")")) +
   xlab('Temperature (ºC)') +
-  facet_grid(~ site.letter, labeller = labeller(site.letter=labels)) + #rename facet wrap headings) + #rename facet wrap headings
-  theme(legend.position = "right") +
+  facet_grid(~ site.letter, labeller = labeller(site.letter=labels)) + #rename facet wrap headings
   labs(col = "Rate Type") +
   geom_hline(yintercept=0, color = "red") +
   theme(legend.position="top") +

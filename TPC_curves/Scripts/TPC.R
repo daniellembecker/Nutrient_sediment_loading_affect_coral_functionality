@@ -256,12 +256,11 @@ ggplot() +
   xlab('Temperature (ºC)') +
   facet_grid(~ site.letter, labeller = labeller(site.letter=labels)) + #rename facet wrap headings
   labs(col = "Rate Type") +
-  geom_hline(yintercept=0, color = "red") +
   theme(legend.position="top") +
   theme(legend.direction = "horizontal") +
   theme(strip.text.x = element_text(size = 14), legend.text=element_text(size=16), legend.title=element_text(size=18), axis.text.x=element_text(color="black", size=18), axis.text.y=element_text(color="black", size=18), axis.title.x = element_text(color="black", size=20), axis.title.y = element_text(color="black", size=20),panel.grid.major=element_blank(), panel.grid.minor=element_blank()) #adjust themes for chart x and y axis labels and axis tick mark labels
 
-ggsave(filename = "TPC_curves/Output/TPCcurves.pdf", device = "pdf", width = 15, height = 10)
+ggsave(filename = "TPC_curves/Output/TPCcurves.png", device = "png", width = 15, height = 10)
 
 
 # function for calculating Topt

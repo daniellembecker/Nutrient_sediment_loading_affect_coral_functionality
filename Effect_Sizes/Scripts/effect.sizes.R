@@ -59,6 +59,7 @@ Topt_scale.C <- lmer(Topt_scale~N.resid + (1|site), data = covariate.data, subse
 c <- model_parameters(Topt_scale.C)
 anova(Topt_scale.C)
 
+
 Pmax_scale.GP <- lmer(Pmax_scale~N.resid + (1|site), data = covariate.data, subset = rate.type=="GP")
 #d <- summary(Pmax_scale.GP)$coefficients[2,1:2]
 ##confint(Pmax_scale.GP, parm = "N.resid", level = 0.90)

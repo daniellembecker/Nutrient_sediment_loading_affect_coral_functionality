@@ -10,9 +10,12 @@ This repository includes data and analysis for the above manuscript
 
 **Funding:** This research was funded in part by California State University, Northridge (CSUN) to NJS, U.S. National Science Foundation OCE#19-24281 to NJS, the American Academy of Underwater Sciences Foundations 2018 Masters Research Scholarship to DMB, CSUN Office of Graduate Studies, Department of Biology, Associated Students, College of Sciences and Mathematics, and Research and Graduate Studies to DMB, and the National Science Foundation 2019 Graduate Research Fellowship to DMB. Material are in this study based upon work supported by the U.S. National Science Foundation under Grant (OCE#16-37396) as well as a generous gift from the Gordon and Betty Moore Foundation. This work represents a contribution of the Mo'orea Coral Reef (MCR) LTER Site and is CSUN Marine Biology contribution #289. Research was completed under permits issued by the French Polynesian Government (De´le´gation a`la Recherche) and the Haut-commissariat de la Re´publique en Polyne´sie Francaise (DTRT) (Protocole d’Accueil 2005-2019).
 
-**Contents:** There are ten folders and a README.md file.
+**Contents:** There are eleven folders and a README.md file.
 
 **Folders:**
+
+**[Benthic_Cover](Benthic_Cover)**    
+Contains data, output, and script files to compared the percent cover of *Pocillopora acuta* to the nutrient and sedimentation gradient within north shore fringing reef sites in Mo'orea, French Polynesia.
 
 **[Correlation_Matrix](Correlation_Matrix)**    
 Contains data, output, and script files to compose an environmental parameters correlation matrix to compare environmental trends across our varying nutrient and sedimentation gradient within north shore fringing reef sites in Mo'orea, French Polynesia.

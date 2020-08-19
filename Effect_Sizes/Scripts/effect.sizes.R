@@ -160,25 +160,31 @@ sym <- lmer(zoox_scale~N.resid + (1|site), data = covariate.data)
 #j <- summary(sym)$coefficients[2,1:2]
 j <-model_parameters(sym)
 
+
 chloro <- lmer(chl_scale~N.resid + (1|site), data = covariate.data)
 #k <- summary(chloro)$coefficients[2,1:2]
 k <-model_parameters(chloro)
+
 
 AFDW <- lmer(afdw_scale~N.resid + (1|site), data = covariate.data)
 #l <- summary(AFDW)$coefficients[2,1:2]
 l <-model_parameters(AFDW)
 
+
 N.AT <- lmer(N.AT_scale~N.resid + (1|site), data = covariate.data)
 #m <- summary(N.AT)$coefficients[2,1:2]
 m <-model_parameters(N.AT)
+anova(N.AT)
 
 N.ST <- lmer(N.ST_scale~N.resid + (1|site), data = covariate.data)
 #n <- summary(N.ST)$coefficients[2,1:2]
 n <- model_parameters(N.ST)
 
+
 per.N.ST <- lmer(per.N.ST_scale~N.resid + (1|site), data = covariate.data)
 #n <- summary(N.ST)$coefficients[2,1:2]
 o <- model_parameters(per.N.ST)
+
 
 #rbind all sumary data for each param into one data sheet
 intrin.dat <- rbind(j,k,l,m,n,o)

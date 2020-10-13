@@ -9,7 +9,7 @@ This repository includes data and analysis for the above manuscript
 
 **Journal:** Journal of Experimental Biology
 
-**Link:** *[https://jeb.biologists.org/content/early/2020/09/15/jeb.225045](https://jeb.biologists.org/content/early/2020/09/15/jeb.225045)*
+**Link:**[https://jeb.biologists.org/content/early/2020/09/15/jeb.225045](https://jeb.biologists.org/content/early/2020/09/15/jeb.225045)
 
 Becker, D.M. and Silbiger, N.J., 2020. Nutrient and sediment loading affect multiple facets of coral functionality in a tropical branching coral. Journal of Experimental Biology. [https://doi.org/10.1242/jeb.225045](https://doi.org/10.1242/jeb.225045)
 
